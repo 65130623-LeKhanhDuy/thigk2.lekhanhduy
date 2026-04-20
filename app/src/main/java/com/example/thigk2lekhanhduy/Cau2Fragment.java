@@ -37,12 +37,19 @@ public class Cau2Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         list = new ArrayList<>();
-        list.add(new LandScape("Lũng cú Hà Giang", "cotco"));
-        list.add(new LandScape("Bà Nà Hill Đà Nẵng", "bnhill"));
-        list.add(new LandScape("Phố cổ Hội An ", "hoian"));
-        list.add(new LandScape("Quần thể Tràng An Ninh Bình", "quangninh"));
-        list.add(new LandScape("Thác Bản Giốc Cao Bằng", "thac"));
-        list.add(new LandScape("Vịnh Hạ Long", "vhlong"));
+        list.add(new LandScape("Thành Phố Hồ Chí Minh", "hochiminh"));
+        list.add(new LandScape("Thành Phố Đà Nẵng", "danang"));
+        list.add(new LandScape("Thành Phố Cần Thơ ", "cantho"));
+        list.add(new LandScape("Thành Phố Huế", "hue"));
+        list.add(new LandScape("Thành Phố Đà Lạt", "dalat"));
+        list.add(new LandScape("Thành Phố Hạ Long", "vhlong"));
+        list.add(new LandScape("Thành Phố Hà Nội ", "hanoi"));
+        list.add(new LandScape("Thành Phố Cần Thơ", "cantho"));
+        list.add(new LandScape("Thành Phố Hải Phòng", "haiphong"));
+        list.add(new LandScape("Lê Khánh Duy-65130623", "sinhvien"));
+
+
+
 
 
 
