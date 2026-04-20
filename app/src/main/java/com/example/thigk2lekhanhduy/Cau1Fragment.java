@@ -11,19 +11,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 public class Cau1Fragment extends Fragment {
-    EditText editText_MET;
-    EditText editText_KiloMET;
-    Button btnChuye;
 
 
-
+    EditText editChieuRong;
+    EditText editChieuDai;
+    EditText editChuVi;
+    EditText editDienTich;
+    Button btnTinhToan;
 
     public Cau1Fragment() {
-        // Required empty public constructor
     }
-
 
     public static Cau1Fragment newInstance(String param1, String param2) {
         Cau1Fragment fragment = new Cau1Fragment();
@@ -35,29 +33,47 @@ public class Cau1Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
-    @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                       Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View viewCau1 = inflater.inflate(R.layout.fragment_cau1, container, false);
-        editText_MET = viewCau1.findViewById(R.id.editSoMet);
-        editText_KiloMET = viewCau1.findViewById(R.id.editSoKm);
-        btnChuye = viewCau1.findViewById(R.id.btnDoi);
-        btnChuye.setOnClickListener(new View.OnClickListener() {
+
+
+        editChieuRong = viewCau1.findViewById(R.id.editSoMet); // Bạn dùng ID cũ, tôi ánh xạ theo luôn
+        editChieuDai = viewCau1.findViewById(R.id.editSoKm);
+        editChuVi = viewCau1.findViewById(R.id.editTextNumber2);
+        editDienTich = viewCau1.findViewById(R.id.editTextNumber3);
+        btnTinhToan = viewCau1.findViewById(R.id.btnDoi);
+
+
+        btnTinhToan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String duLieuMet = editText_MET.getText().toString();
-                String duLieuKiloMet = editText_KiloMET.getText().toString();
-                if (!duLieuMet.isEmpty()){
-                    Toast.makeText(viewCau1.getContext(),"m-km",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(viewCau1.getContext(),"km-m",Toast.LENGTH_SHORT).show();
+
+                String strRong = editChieuRong.getText().toString().trim();
+                String strDai = editChieuDai.getText().toString().trim();
+
+
+                if (strRong.isEmpty() || strDai.isEmpty()){
+                    Toast.makeText(viewCau1.getContext(), "Vui lòng nhập đủ chiều dài và chiều rộng!", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    double chieuRong = Double.parseDouble(strRong);
+                    double chieuDai = Double.parseDouble(strDai);
+
+
+                    double chuVi = (chieuDai + chieuRong) * 2;
+                    double dienTich = chieuDai * chieuRong;
+
+
+                    editChuVi.setText(String.valueOf(chuVi));
+                    editDienTich.setText(String.valueOf(dienTich));
                 }
             }
         });
+
         return viewCau1;
     }
 }
