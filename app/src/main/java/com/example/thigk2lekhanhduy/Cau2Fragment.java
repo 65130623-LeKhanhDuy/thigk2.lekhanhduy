@@ -53,19 +53,19 @@ public class Cau2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View viewCau3 = inflater.inflate(R.layout.fragment_cau5, container, false);
+        View viewCau2 = inflater.inflate(R.layout.fragment_cau2, container, false);
         //4. tìm đk Recycler
-        recyclerViewLandscap = viewCau3.findViewById(R.id.ryCau3);
+        recyclerViewLandscap = viewCau2.findViewById(R.id.ryCau3);
 
         //5. Tạo layout manager để đặt bố cục cho Recycler
-        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(viewCau3.getContext());
+        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(viewCau2.getContext());
         recyclerViewLandscap.setLayoutManager(layoutLinear);
         //6. tạo adapter gắn với nguồn dl
-        adapter = new ItemLandscapAdapter(viewCau3.getContext(), list);
+        adapter = new ItemLandscapAdapter(viewCau2.getContext(), list);
         //7. gắn adapter với Recycler
         recyclerViewLandscap.setAdapter(adapter);
 
 
-        return viewCau3;
+        return viewCau2;
     }
-}}
+}
